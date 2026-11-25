@@ -215,10 +215,7 @@ footer{display:flex;justify-content:space-between;padding:28px 32px;color:var(--
   .belt .track{font-size:30px}
   footer{flex-direction:column;gap:8px;padding:24px 16px}
 }
-@media (prefers-reduced-motion:reduce){
-  *{animation:none!important;transition:none!important}
-  .rv{opacity:1;transform:none}
-}
+
 </style>
 </head>
 <body class="locked">
@@ -467,11 +464,7 @@ footer{display:flex;justify-content:space-between;padding:28px 32px;color:var(--
 // ===== Intro: bats revolve around a 3D bat symbol, then the site opens =====
 (function(){
   const intro=document.getElementById('intro');
-  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let seen=false;try{seen=sessionStorage.getItem('introSeen')==='1'}catch(e){}
   const finish=()=>{intro.classList.add('done');document.body.classList.remove('locked');setTimeout(()=>intro.remove(),800)};
-  if(reduce||seen){intro.remove();document.body.classList.remove('locked');return;}
-  try{sessionStorage.setItem('introSeen','1')}catch(e){}
   const NS='http://www.w3.org/2000/svg';
   // thick 3D emblem: stacked layers along Z
   const em=document.getElementById('emblem3d');
@@ -494,12 +487,14 @@ footer{display:flex;justify-content:space-between;padding:28px 32px;color:var(--
       bats.push({el,a:i/ring.n*Math.PI*2+Math.random()*.3,r:ring.r*k,tilt:ring.tilt,sp:ring.sp*(0.85+Math.random()*.3),y:(ring.y+Math.random()*50-25)*k});
     }
   });
-  let spread=1,t0=performance.now(),running=true,exitAt=0;
-  const start=t0, title=intro.querySelector('.title');
+  let spread=1,t0=performance.now(),running=true,exitAt=0,start=null;
+  const title=intro.querySelector('.title');
   const ease=p=>1-Math.pow(1-p,3);
   const frame=t=>{
     if(!running)return;
+    if(start===null)start=t;   // timeline starts on the first frame actually painted (tab visible)
     const dt=Math.min((t-t0)/1000,.05);t0=t;
+    if(!exitAt&&t-start>4200)leave();
     // emblem: flies in from deep space spinning, then settles; on exit rushes at the camera
     const el=t-start;
     if(!exitAt){
@@ -532,7 +527,6 @@ footer{display:flex;justify-content:space-between;padding:28px 32px;color:var(--
     requestAnimationFrame(grow);
     setTimeout(()=>{running=false;finish()},850);
   };
-  setTimeout(leave,3600);
   intro.addEventListener('click',leave);
   addEventListener('keydown',leave,{once:true});
 })();
