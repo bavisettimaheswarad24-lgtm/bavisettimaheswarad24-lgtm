@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bavisetti Maheswar — AI/ML Developer</title>
+<meta name="description" content="Portfolio of Bavisetti Maheswar — AI/ML developer building computer vision, NLP and full-stack projects.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500&family=Pinyon+Script&family=Anton&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#060608; --ink-2:#0d0d11; --line:#24242b; --bone:#ece6da; --dim:#8b8794;
+  --red:#c1121f; --red-2:#ff3b47; --serif:"Instrument Serif",Georgia,serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace; --sans:Inter,system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--bone);font-family:var(--sans);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.mono{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase}
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+.grain{pointer-events:none;position:fixed;inset:0;z-index:100;opacity:.06;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.gridlines{pointer-events:none;position:absolute;inset:0;
+  background:linear-gradient(90deg,transparent calc(25% - 1px),var(--line) 25%,transparent calc(25% + 1px),transparent calc(75% - 1px),var(--line) 75%,transparent calc(75% + 1px));opacity:.5}
+
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:flex-start;padding:26px 32px;mix-blend-mode:difference}
+.logo{font-family:var(--serif);font-size:30px;line-height:1}
+.logo span{color:var(--red-2)}
+.navlinks{display:flex;flex-direction:column;align-items:flex-end;gap:4px;font-family:var(--serif);font-size:19px}
+.navlinks a{opacity:.75;transition:opacity .2s}
+.navlinks a:hover{opacity:1}
+
+/* hero */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:grid;place-items:end center;overflow:hidden;perspective:1400px}
+.hero-word{position:absolute;top:13vh;left:50%;transform:translateX(-50%);font-family:var(--serif);font-size:clamp(90px,19vw,300px);line-height:.85;white-space:nowrap;color:transparent;-webkit-text-stroke:1px #2c2c34;letter-spacing:-.02em;user-select:none}
+.ring{position:absolute;top:40vh;left:50%;width:0;height:0;transform-style:preserve-3d;animation:spin 38s linear infinite}
+.ring .card{position:absolute;width:210px;height:128px;left:-105px;top:-64px;border-radius:10px;overflow:hidden;border:1px solid #ffffff1f;background:#111 center/cover;box-shadow:0 20px 50px #000a;backface-visibility:hidden}
+.ring .card .t{position:absolute;inset:auto 10px 8px;font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:#fff;text-shadow:0 1px 6px #000}
+.card.code{display:flex;align-items:center;justify-content:center;font-family:Anton,sans-serif;font-size:30px;letter-spacing:.02em;color:var(--red-2);background:radial-gradient(circle at 50% 30%,#3a0a10,#0b0507)}
+@keyframes spin{to{transform:rotateY(-360deg)}}
+.portrait{position:relative;z-index:3;width:min(430px,78vw);aspect-ratio:3/4;margin-bottom:0;
+  -webkit-mask-image:linear-gradient(#000 70%,transparent 100%);mask-image:linear-gradient(#000 70%,transparent 100%)}
+.portrait img{width:100%;height:100%;object-fit:cover;border-radius:999px 999px 0 0;filter:grayscale(.15) contrast(1.05)}
+.portrait::after{content:"";position:absolute;inset:0;border-radius:999px 999px 0 0;background:linear-gradient(180deg,transparent 40%,#06060899 85%),radial-gradient(circle at 50% 0,#c1121f22,transparent 60%)}
+.hero-side{position:absolute;z-index:4;bottom:12vh;max-width:250px}
+.hero-side.l{left:32px}.hero-side.r{right:32px;text-align:right}
+.hero-side h1{font-family:var(--serif);font-weight:400;font-size:clamp(34px,4vw,54px);line-height:1;margin:12px 0}
+.hero-side p{color:var(--dim);font-size:14px;line-height:1.6}
+.scroll-cue{position:absolute;z-index:4;bottom:28px;left:50%;transform:translateX(-50%);color:var(--dim)}
+.bat{position:absolute;z-index:2;width:46px;fill:#000;opacity:.9}
+
+/* section heads */
+.kicker{display:flex;align-items:center;gap:14px;color:var(--dim)}
+.kicker::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--red-2)}
+.kicker::after{content:"";flex:1;height:1px;background:var(--line)}
+
+/* why / arch */
+.why{position:relative;padding:140px 0 120px;overflow:hidden}
+.why .bigword{position:absolute;top:40px;left:50%;transform:translateX(-50%);font-family:var(--serif);font-size:clamp(140px,24vw,340px);line-height:1;color:transparent;-webkit-text-stroke:1px #22222a;user-select:none}
+.arch-grid{position:relative;display:grid;grid-template-columns:1fr 360px 1fr;align-items:center;gap:0;min-height:560px}
+.arch{position:relative;z-index:2;height:540px;border-radius:999px 999px 0 0;overflow:hidden;padding:110px 34px 40px;display:flex;flex-direction:column;justify-content:flex-start;
+  background:linear-gradient(180deg,#0b050722 0%,#0b050799 35%,#2a070dcc 65%,#5c0d16ee 100%),url(img/code-red.jpg) 52% 20%/auto 115%}
+.arch .mono{color:#ffb3b8;font-size:11px}
+.arch h2{font-family:var(--serif);font-weight:400;font-size:42px;line-height:1.02;margin:12px 0 22px}
+.arch p{font-size:14px;line-height:1.6;color:#f1d9db}
+.sign{font-family:"Pinyon Script",cursive;font-size:40px;margin-top:auto;color:#fff}
+.stats{display:grid;grid-template-rows:1fr 1fr;height:100%;gap:40px}
+.stat{position:relative;display:flex;flex-direction:column;justify-content:center}
+.col-l .stat{padding-right:70px}.col-r .stat{padding-left:70px}
+.stat b{font-family:var(--serif);font-weight:400;font-size:clamp(56px,6vw,84px);line-height:1;color:#ffd6d9}
+.stat b em{font-style:normal;color:var(--red-2)}
+.stat > span{margin-top:10px;color:var(--bone);font-size:11px;line-height:1.7}
+.stat svg{position:absolute;top:50%;width:150px;height:60px;overflow:visible}
+.col-l .stat svg{right:-80px;transform:translateY(-10%)}
+.col-r .stat svg{left:-80px;transform:translateY(-10%) scaleX(-1)}
+.stat path{fill:none;stroke:#8d6a6e;stroke-width:1;stroke-dasharray:200;stroke-dashoffset:200;transition:stroke-dashoffset 1.4s ease .3s}
+.stat circle{fill:var(--red-2)}
+.in .stat path{stroke-dashoffset:0}
+
+/* cases */
+.cases{padding:60px 0 120px}
+.case{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center;padding:56px 0;border-bottom:1px solid var(--line)}
+.case:nth-child(even) .shot{order:2}
+.shot{position:relative;aspect-ratio:16/10;border-radius:6px;overflow:hidden;background:#120709 center/cover;border:1px solid #ffffff12;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.shot:hover{transform:scale(1.015)}
+.shot .word{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:Anton,sans-serif;font-size:clamp(46px,7vw,96px);letter-spacing:.01em;color:transparent;
+  background:repeating-linear-gradient(0deg,#ff3b47 0 2px,#8f0d18 2px 4px);-webkit-background-clip:text;background-clip:text;opacity:.92}
+.shot .bar{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;padding:14px 18px;font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:#fff}
+.shot .meta{position:absolute;left:18px;bottom:16px;max-width:200px;font-size:10px;line-height:1.5;color:#ddd}
+.shot .meta strong{display:block;font-size:12px;margin-bottom:4px;color:#fff}
+.shot .pill{position:absolute;right:16px;bottom:14px;background:var(--bone);color:#111;font-family:var(--mono);font-size:10px;letter-spacing:.12em;padding:7px 14px;border-radius:99px}
+.case .num{font-family:var(--serif);font-size:clamp(64px,8vw,104px);line-height:1;color:#ff8a92}
+.case h3{font-family:var(--serif);font-weight:400;font-size:clamp(32px,3.6vw,46px);line-height:1.05;margin:18px 0 16px}
+.case p{color:#cfc9be;line-height:1.7;font-size:15px;max-width:460px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.tags span{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--line);padding:6px 10px;border-radius:99px;color:var(--dim)}
+.go{display:inline-flex;gap:10px;align-items:center;margin-top:26px;font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;border-bottom:1px solid var(--red-2);padding-bottom:4px}
+.go:hover{color:var(--red-2)}
+
+/* belt marquee */
+.belt{border-block:1px solid var(--line);overflow:hidden;padding:26px 0;background:var(--ink-2)}
+.belt .track{display:flex;gap:56px;width:max-content;animation:slide 30s linear infinite;font-family:var(--serif);font-size:44px;font-style:italic;white-space:nowrap}
+.belt .track i{font-style:normal;color:var(--red-2);font-size:28px;align-self:center}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* about */
+.about{padding:130px 0;display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.about h2{font-family:var(--serif);font-weight:400;font-size:clamp(40px,5vw,68px);line-height:1}
+.about h2 em{color:var(--red-2)}
+.about p{color:#cfc9be;line-height:1.8;margin-top:22px}
+.about .pic{aspect-ratio:16/10;border-radius:6px;background:url(img/bats-white.jpg) center/cover;filter:grayscale(1) contrast(1.1);border:1px solid #ffffff14}
+.creed{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);margin-top:34px;border:1px solid var(--line)}
+.creed div{background:var(--ink);padding:18px}
+.creed b{display:block;font-family:var(--serif);font-weight:400;font-size:24px}
+.creed span{font-size:12px;color:var(--dim)}
+
+/* contact */
+.contact{position:relative;min-height:90vh;display:grid;place-items:center;text-align:center;overflow:hidden;
+  background:linear-gradient(#060608 0%,#06060866 30%,#06060866 70%,#060608 100%),url(img/ink-bats.jpg) center/cover}
+.contact::before{content:"";position:absolute;inset:0;background:#0606088c}
+.contact > div{position:relative}
+.contact h2{font-family:var(--serif);font-weight:400;font-size:clamp(56px,10vw,150px);line-height:.9;color:#fff}
+.contact h2 em{color:var(--red-2)}
+.contact p{margin:22px auto 34px;max-width:440px;color:#ddd;line-height:1.7}
+.btn{display:inline-flex;align-items:center;gap:12px;background:var(--red);color:#fff;padding:16px 28px;border-radius:99px;font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;transition:background .2s,transform .2s}
+.btn:hover{background:var(--red-2);transform:translateY(-2px)}
+footer{display:flex;justify-content:space-between;padding:28px 32px;color:var(--dim);border-top:1px solid var(--line)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(40px);transition:opacity 1s ease,transform 1s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+
+@media (max-width:900px){
+  .wrap{padding:0 16px} nav{padding:18px 16px}
+  .hero-side{position:relative;inset:auto;max-width:none;text-align:left!important;padding:0 16px}
+  .hero{display:flex;flex-direction:column;justify-content:flex-end;padding-top:110px}
+  .hero-side.r,.scroll-cue{display:none}
+  .hero-side.l{padding-bottom:40px}
+  .ring{top:34vh}.ring .card{width:140px;height:86px;left:-70px;top:-43px}
+  .arch-grid{grid-template-columns:1fr;gap:40px}
+  .stats{grid-template-rows:none;grid-template-columns:1fr 1fr;gap:28px}
+  .col-l .stat,.col-r .stat{padding:0}.stat svg{display:none}
+  .arch{height:auto;min-height:480px;order:-1}
+  .case,.about{grid-template-columns:1fr;gap:28px}
+  .case:nth-child(even) .shot{order:0}
+  .creed{grid-template-columns:1fr}
+  .belt .track{font-size:30px}
+  footer{flex-direction:column;gap:8px;padding:24px 16px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<div class="grain"></div>
+<svg width="0" height="0" style="position:absolute"><defs>
+  <path id="batp" d="M0,-8 L-6,-15 L-8,-6 C-20,-8 -34,-4 -50,6 C-40,6 -34,10 -32,18 C-26,12 -18,12 -14,18 C-10,10 -4,10 0,17 C4,10 10,10 14,18 C18,12 26,12 32,18 C34,10 40,6 50,6 C34,-4 20,-8 8,-6 L6,-15 Z"/>
+</defs></svg>
+
+<nav>
+  <a class="logo" href="#top">Maheswar<span>.</span></a>
+  <div class="navlinks">
+    <a href="#work">Works</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="gridlines"></div>
+  <div class="hero-word" id="heroWord">Maheswar</div>
+  <div class="ring" id="ring"></div>
+
+  <div class="portrait"><img src="img/me.jpg" alt="Bavisetti Maheswar smiling, sitting on a bench"></div>
+
+  <div class="hero-side l">
+    <div class="mono" style="color:var(--red-2)">● Available for projects</div>
+    <h1>AI / ML<br><em>developer</em></h1>
+    <p>Computer vision, NLP and full-stack apps — built late at night, shipped clean.</p>
+  </div>
+  <div class="hero-side r">
+    <div class="mono" style="color:var(--dim)">Based in Gotham*</div>
+    <p style="margin-top:12px">*Actually India. But the code runs best after dark.</p>
+  </div>
+  <div class="scroll-cue mono">Scroll ↓</div>
+</header>
+
+<!-- WHY -->
+<section class="why" id="why">
+  <div class="gridlines"></div>
+  <div class="bigword">Why</div>
+  <div class="wrap">
+    <div class="arch-grid rv">
+      <div class="stats col-l">
+        <div class="stat">
+          <b data-count="324">0</b>
+          <span class="mono">Indian cricketers<br>recognised by my FaceNet model</span>
+          <svg viewBox="0 0 150 60"><path d="M0 20 H70 L140 50"/><circle cx="140" cy="50" r="3.5"/></svg>
+        </div>
+        <div class="stat">
+          <b><span data-count="3">0</span><em>+</em></b>
+          <span class="mono">AI fields explored:<br>vision · NLP · retrieval</span>
+          <svg viewBox="0 0 150 60"><path d="M0 40 H70 L140 10"/><circle cx="140" cy="10" r="3.5"/></svg>
+        </div>
+      </div>
+
+      <div class="arch">
+        <div class="mono">• Why me</div>
+        <h2>Built in the dark, shipped in the light.</h2>
+        <p>Every project starts with a real problem — screening resumes, identifying faces, catching crop disease — and ends with a working app people can actually use.</p>
+        <div class="sign">Maheswar</div>
+      </div>
+
+      <div class="stats col-r">
+        <div class="stat">
+          <b data-count="5">0</b>
+          <span class="mono">Public projects<br>live on GitHub</span>
+          <svg viewBox="0 0 150 60"><path d="M0 20 H70 L140 50"/><circle cx="140" cy="50" r="3.5"/></svg>
+        </div>
+        <div class="stat">
+          <b><span data-count="10">0</span><em>+</em></b>
+          <span class="mono">Tools in the<br>utility belt</span>
+          <svg viewBox="0 0 150 60"><path d="M0 40 H70 L140 10"/><circle cx="140" cy="10" r="3.5"/></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BELT -->
+<div class="belt" aria-hidden="true"><div class="track" id="belt"></div></div>
+
+<!-- CASES -->
+<section class="cases wrap" id="work">
+  <div class="kicker mono">Case files</div>
+
+  <article class="case rv">
+    <div class="shot" style="background-image:linear-gradient(#1a0508cc,#0a0204ee),url(img/code-red.jpg)">
+      <div class="bar"><span>B·M</span><span>☰</span></div>
+      <div class="word">SCREENING</div>
+      <div class="meta"><strong>AI Resume Screening</strong>Cross-encoder transformers rank every resume against the job, then an AI advisor explains the shortlist.</div>
+      <div class="pill">VIEW CASE</div>
+    </div>
+    <div>
+      <div class="num">01.</div>
+      <h3>AI Resume Screening System</h3>
+      <p>An AI recruitment platform that does semantic job–resume matching with cross-encoder transformers and KeyBERT, filters by experience and qualifications, and shows hiring analytics in visual dashboards.</p>
+      <div class="tags"><span>Python</span><span>Sentence-Transformers</span><span>KeyBERT</span><span>Streamlit</span><span>Plotly</span></div>
+      <a class="go" href="https://github.com/bavisettimaheswarad24-lgtm/-AI-Resume-Screening-System" target="_blank" rel="noopener">Open case ↗</a>
+    </div>
+  </article>
+
+  <article class="case rv">
+    <div class="shot" style="background-image:linear-gradient(#ffffff00,#00000088),url(img/bats-white.jpg)">
+      <div class="bar" style="color:#111"><span>B·M</span><span>☰</span></div>
+      <div class="meta" style="color:#eee"><strong>324 players</strong>Upload a photo — get the player, profile and career stats.</div>
+      <div class="pill">VIEW CASE</div>
+    </div>
+    <div>
+      <div class="num">02.</div>
+      <h3>Indian Cricketer Face Identification</h3>
+      <p>Detects faces with MTCNN and embeds them with FaceNet (InceptionResnetV1) to identify 324 Indian cricketers from an uploaded photo, with detailed profiles, career stats and a stadium-inspired UI.</p>
+      <div class="tags"><span>PyTorch</span><span>FaceNet</span><span>MTCNN</span><span>Flask</span><span>JavaScript</span></div>
+      <a class="go" href="https://github.com/bavisettimaheswarad24-lgtm/indain_cricketer_face_identification" target="_blank" rel="noopener">Open case ↗</a>
+    </div>
+  </article>
+
+  <article class="case rv">
+    <div class="shot" style="background-image:linear-gradient(#0a0a0c33,#0a0a0caa),url(img/ink-bats.jpg)">
+      <div class="bar" style="color:#111"><span>B·M</span><span>☰</span></div>
+      <div class="word" style="background:repeating-linear-gradient(0deg,#ff3b47 0 2px,#5c0710 2px 4px);-webkit-background-clip:text;background-clip:text">DETECT</div>
+      <div class="meta"><strong>Crop disease</strong>Leaf photo in — diagnosis and action plan out.</div>
+      <div class="pill">VIEW CASE</div>
+    </div>
+    <div>
+      <div class="num">03.</div>
+      <h3>Crop Disease Detection</h3>
+      <p>A web app where a farmer uploads a photo of a plant; the model detects the disease and returns a clear action plan to treat it.</p>
+      <div class="tags"><span>Computer Vision</span><span>Deep Learning</span><span>Web App</span></div>
+      <a class="go" href="https://github.com/bavisettimaheswarad24-lgtm/-CROP--DISEASES-DETECTION-PROJECT-" target="_blank" rel="noopener">Open case ↗</a>
+    </div>
+  </article>
+
+  <article class="case rv">
+    <div class="shot" style="background:radial-gradient(circle at 70% 20%,#3a0a10,#08080a 70%)">
+      <div class="bar"><span>B·M</span><span>☰</span></div>
+      <div class="word">ASK&nbsp;ME</div>
+      <div class="meta"><strong>Personal chatbot</strong>Inverted index + TF-IDF vectors for fast, precise answers.</div>
+      <div class="pill">VIEW CASE</div>
+    </div>
+    <div>
+      <div class="num">04.</div>
+      <h3>Python Personal Chatbot</h3>
+      <p>A fast question-answering chatbot built from scratch — an inverted index narrows candidates, TF-IDF vector matching picks the best answer, served through Flask.</p>
+      <div class="tags"><span>Python</span><span>NLP</span><span>TF-IDF</span><span>Flask</span><span>HTML/CSS</span></div>
+      <a class="go" href="https://github.com/bavisettimaheswarad24-lgtm/python-personal-chatbot" target="_blank" rel="noopener">Open case ↗</a>
+    </div>
+  </article>
+
+  <article class="case rv">
+    <div class="shot" style="background:#0b0b0e">
+      <div class="bar"><span>B·M</span><span>☰</span></div>
+      <div class="word" style="font-size:clamp(34px,5vw,70px)">STRUCT&nbsp;NODE*</div>
+      <div class="meta"><strong>Foundations</strong>Stacks, queues, lists and trees — written in plain C.</div>
+      <div class="pill">VIEW CASE</div>
+    </div>
+    <div>
+      <div class="num">05.</div>
+      <h3>Data Structure Programs</h3>
+      <p>The training ground: core data structures and algorithms implemented in C, where I learned how memory, pointers and complexity really work.</p>
+      <div class="tags"><span>C</span><span>DSA</span><span>Algorithms</span></div>
+      <a class="go" href="https://github.com/bavisettimaheswarad24-lgtm/datastructure-programs" target="_blank" rel="noopener">Open case ↗</a>
+    </div>
+  </article>
+</section>
+
+<!-- ABOUT -->
+<section class="wrap" id="about">
+  <div class="kicker mono">Secret identity</div>
+  <div class="about rv">
+    <div>
+      <h2>By day, a student.<br>By night, <em>building models.</em></h2>
+      <p>I'm Bavisetti Maheswar — I love turning ideas into working AI products. I work across computer vision, natural language processing and full-stack web, and I'm always learning the next tool.</p>
+      <div class="creed">
+        <div><b>Train</b><span>Learn deeply, practise daily</span></div>
+        <div><b>Detect</b><span>Debug with evidence</span></div>
+        <div><b>Protect</b><span>Ship clean, reliable code</span></div>
+      </div>
+    </div>
+    <div class="pic" role="img" aria-label="Black and white artwork of a caped figure with bats"></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="rv">
+    <div class="mono" style="color:var(--red-2)">• Contact</div>
+    <h2 style="margin-top:16px">Light the<br><em>signal.</em></h2>
+    <p>Open to internships, collaborations and hackathon teams. Ping me on GitHub and I'll answer the call.</p>
+    <a class="btn" href="https://github.com/bavisettimaheswarad24-lgtm" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="-52 -18 104 38" fill="currentColor"><use href="#batp"/></svg>
+      GitHub ↗
+    </a>
+  </div>
+</section>
+
+<footer class="mono"><span>© 2026 Bavisetti Maheswar</span><span>Made after dark</span></footer>
+
+<script>
+// 3D ring of floating cards behind the portrait
+const cards=[
+  {bg:"img/code-red.jpg",t:"Resume AI"},{code:"324"},{bg:"img/bats-white.jpg",t:"Face ID"},
+  {code:"TF·IDF"},{bg:"img/ink-bats.jpg",t:"Crop scan"},{code:"&lt;/&gt;"},
+  {bg:"img/code-red.jpg",t:"Chatbot"},{code:"C · DSA"}
+];
+const ring=document.getElementById('ring');
+const R=window.innerWidth<900?240:520;
+cards.forEach((c,i)=>{
+  const d=document.createElement('div');
+  d.className='card'+(c.code?' code':'');
+  if(c.bg)d.style.backgroundImage=`url(${c.bg})`;
+  d.innerHTML=c.code?c.code:`<span class="t">${c.t}</span>`;
+  d.style.transform=`rotateY(${i*360/cards.length}deg) translateZ(${R}px) rotateX(-4deg)`;
+  ring.appendChild(d);
+});
+
+// marquee
+const items=["Python","PyTorch","FaceNet","Transformers","KeyBERT","Flask","Streamlit","Pandas","NumPy","Plotly","JavaScript","C"];
+const belt=document.getElementById('belt');
+belt.innerHTML=[...items,...items].map(s=>`<span>${s}</span><i>✦</i>`).join('');
+
+// flying bats in hero
+const hero=document.querySelector('.hero');
+for(let i=0;i<5;i++){
+  const s=document.createElementNS('http://www.w3.org/2000/svg','svg');
+  s.setAttribute('viewBox','-52 -18 104 38');s.classList.add('bat');
+  s.innerHTML='<use href="#batp"/>';
+  const w=18+Math.random()*30;s.style.width=w+'px';
+  s.animate([{transform:`translate(-10vw,${20+Math.random()*30}vh)`},{transform:`translate(110vw,${5+Math.random()*30}vh)`}],
+    {duration:9000+Math.random()*9000,delay:i*1800,iterations:Infinity});
+  hero.appendChild(s);
+}
+
+// parallax hero word
+const hw=document.getElementById('heroWord');
+addEventListener('scroll',()=>{hw.style.transform=`translateX(-50%) translateY(${scrollY*.35}px)`},{passive:true});
+
+// reveal + counters
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;
+  e.target.classList.add('in');
+  e.target.querySelectorAll('[data-count]').forEach(el=>{
+    const end=+el.dataset.count,t0=performance.now();
+    const step=t=>{const p=Math.min((t-t0)/1400,1);el.textContent=Math.round(end*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(step)};
+    requestAnimationFrame(step);
+  });
+  io.unobserve(e.target);
+}),{threshold:.2});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
