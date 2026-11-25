@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="150" viewBox="0 0 1200 150">
+  <defs>
+    <linearGradient id="bg" x2="1"><stop stop-color="#0A0A0F"/><stop offset=".5" stop-color="#1C1917"/><stop offset="1" stop-color="#0A0A0F"/></linearGradient>
+    <path id="bat" d="M0,-8 L-6,-15 L-8,-6 C-20,-8 -34,-4 -50,6 C-40,6 -34,10 -32,18 C-26,12 -18,12 -14,18 C-10,10 -4,10 0,17 C4,10 10,10 14,18 C18,12 26,12 32,18 C34,10 40,6 50,6 C34,-4 20,-8 8,-6 L6,-15 Z"/>
+  </defs>
+  <rect width="1200" height="150" rx="18" fill="url(#bg)" stroke="#3F3F46"/>
+  <use href="#bat" transform="translate(120 75) scale(1.1)" fill="#FACC15">
+    <animate attributeName="opacity" values="1;.4;1" dur="2.5s" repeatCount="indefinite"/>
+  </use>
+  <use href="#bat" transform="translate(1080 75) scale(1.1)" fill="#FACC15">
+    <animate attributeName="opacity" values=".4;1;.4" dur="2.5s" repeatCount="indefinite"/>
+  </use>
+  <text x="600" y="64" text-anchor="middle" fill="#F9FAFB" font-family="Arial, sans-serif" font-size="28" font-weight="700">Light the signal. Let's build something.</text>
+  <text x="600" y="98" text-anchor="middle" fill="#A1A1AA" font-family="monospace" font-size="14" letter-spacing="2">OPEN TO COLLABS · HACKATHONS · AI/ML PROJECTS</text>
+  <path d="M260 120H940" stroke="#FACC15" stroke-width="2" stroke-dasharray="6 10" opacity=".6">
+    <animate attributeName="stroke-dashoffset" values="0;32" dur="2s" repeatCount="indefinite"/>
+  </path>
+</svg>

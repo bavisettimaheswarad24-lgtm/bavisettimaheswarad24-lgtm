@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="220" viewBox="0 0 1200 220">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0A0A0F"/><stop offset="1" stop-color="#1F2937"/></linearGradient>
+    <linearGradient id="scan" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#FACC15" stop-opacity="0"/><stop offset=".5" stop-color="#FACC15" stop-opacity=".25"/><stop offset="1" stop-color="#FACC15" stop-opacity="0"/></linearGradient>
+  </defs>
+  <rect width="1200" height="220" rx="18" fill="url(#bg)" stroke="#3F3F46"/>
+  <rect x="0" y="-60" width="1200" height="60" fill="url(#scan)">
+    <animate attributeName="y" values="-60;220" dur="4s" repeatCount="indefinite"/>
+  </rect>
+  <text x="36" y="38" fill="#FACC15" font-family="monospace" font-size="13" letter-spacing="3">BATCOMPUTER · CASE FILE #0001</text>
+  <circle cx="1150" cy="33" r="6" fill="#EF4444"><animate attributeName="opacity" values="1;.2;1" dur="1.2s" repeatCount="indefinite"/></circle>
+  <text x="1136" y="38" text-anchor="end" fill="#FCA5A5" font-family="monospace" font-size="11">LIVE</text>
+
+  <g font-family="monospace" font-size="14">
+    <text x="36" y="78" fill="#71717A">OPERATIVE</text><text x="200" y="78" fill="#F9FAFB">Bavisetti Maheswar</text>
+    <text x="36" y="106" fill="#71717A">CLASS</text><text x="200" y="106" fill="#F9FAFB">AI / ML Developer</text>
+    <text x="36" y="134" fill="#71717A">SPECIALTY</text><text x="200" y="134" fill="#F9FAFB">Computer Vision · NLP · Full-Stack</text>
+    <text x="36" y="162" fill="#71717A">STATUS</text><text x="200" y="162" fill="#4ADE80">Active · Always learning</text>
+    <text x="36" y="190" fill="#71717A">BASE</text><text x="200" y="190" fill="#F9FAFB">github.com/bavisettimaheswarad24-lgtm</text>
+  </g>
+
+  <g font-family="monospace" font-size="12" fill="#FEF9C3">
+    <rect x="700" y="64" width="210" height="58" rx="10" fill="#18181B" stroke="#FACC15"/>
+    <text x="716" y="88" fill="#FACC15">VISION</text><text x="716" y="108">Faces · Crop disease</text>
+    <rect x="930" y="64" width="230" height="58" rx="10" fill="#18181B" stroke="#FACC15"/>
+    <text x="946" y="88" fill="#FACC15">LANGUAGE</text><text x="946" y="108">Resume matching · Chatbot</text>
+    <rect x="700" y="138" width="210" height="58" rx="10" fill="#18181B" stroke="#FACC15"/>
+    <text x="716" y="162" fill="#FACC15">WEB</text><text x="716" y="182">Flask · Streamlit · JS</text>
+    <rect x="930" y="138" width="230" height="58" rx="10" fill="#18181B" stroke="#FACC15"/>
+    <text x="946" y="162" fill="#FACC15">FOUNDATIONS</text><text x="946" y="182">Data structures in C</text>
+  </g>
+</svg>

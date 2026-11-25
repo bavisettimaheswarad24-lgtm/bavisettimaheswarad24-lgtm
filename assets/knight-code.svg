@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="160" viewBox="0 0 1200 160">
+  <defs>
+    <linearGradient id="b" x2="1"><stop stop-color="#0A0A0F"/><stop offset="1" stop-color="#1C1917"/></linearGradient>
+    <linearGradient id="f"><stop stop-color="#FDE68A"/><stop offset=".5" stop-color="#FACC15"/><stop offset="1" stop-color="#A16207"/></linearGradient>
+  </defs>
+  <rect width="1200" height="160" rx="18" fill="url(#b)" stroke="#3F3F46"/>
+  <text x="38" y="38" fill="#FACC15" font-family="monospace" font-size="13" letter-spacing="3">THE KNIGHT'S CODE</text>
+  <text x="38" y="78" fill="#F9FAFB" font-family="Arial, sans-serif" font-size="25" font-weight="700">Work in the dark. Ship in the light. Never stop learning.</text>
+  <text x="38" y="112" fill="#A1A1AA" font-family="Arial, sans-serif" font-size="15">Turning curiosity into models, detectors, chatbots and full-stack apps.</text>
+  <g fill="#18181B" stroke="url(#f)" stroke-width="2">
+    <rect x="790" y="28" width="105" height="42" rx="9"/>
+    <rect x="915" y="28" width="105" height="42" rx="9"/>
+    <rect x="1040" y="28" width="125" height="42" rx="9"/>
+  </g>
+  <g fill="#FEF9C3" font-family="monospace" font-size="12" text-anchor="middle">
+    <text x="842" y="54">TRAIN</text><text x="967" y="54">DETECT</text><text x="1102" y="54">PROTECT</text>
+  </g>
+  <path d="M895 49H915M1020 49H1040" stroke="#FACC15" stroke-width="2" stroke-dasharray="5 5">
+    <animate attributeName="stroke-dashoffset" values="0;20" dur="2s" repeatCount="indefinite"/>
+  </path>
+  <g opacity=".55">
+    <path d="M770 110H1160" stroke="#FDE68A" stroke-width="2" stroke-dasharray="4 10">
+      <animate attributeName="stroke-dashoffset" values="0;28" dur="2s" repeatCount="indefinite"/>
+    </path>
+    <circle cx="1165" cy="110" r="5" fill="#FACC15"><animate attributeName="r" values="3;8;3" dur="2s" repeatCount="indefinite"/></circle>
+  </g>
+</svg>

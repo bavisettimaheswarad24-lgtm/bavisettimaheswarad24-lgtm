@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="170" viewBox="0 0 1200 170">
+  <defs>
+    <linearGradient id="belt" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#FDE047"/><stop offset="1" stop-color="#A16207"/>
+    </linearGradient>
+    <linearGradient id="bg" x2="1"><stop stop-color="#09090B"/><stop offset="1" stop-color="#18181B"/></linearGradient>
+  </defs>
+  <rect width="1200" height="170" rx="18" fill="url(#bg)" stroke="#3F3F46"/>
+  <text x="36" y="34" fill="#FACC15" font-family="monospace" font-size="13" letter-spacing="3">UTILITY BELT · LOADED</text>
+  <rect x="30" y="78" width="1140" height="30" rx="6" fill="url(#belt)"/>
+  <rect x="30" y="90" width="1140" height="4" fill="#713F12" opacity=".5"/>
+  <g font-family="monospace" font-size="12" text-anchor="middle" fill="#FEF9C3">
+    <g>
+      <rect x="60" y="60" width="130" height="66" rx="8" fill="#1C1917" stroke="#FACC15" stroke-width="2"/>
+      <text x="125" y="98">PYTHON</text>
+      <animateTransform attributeName="transform" type="translate" values="0 0;0 -4;0 0" dur="3s" repeatCount="indefinite"/>
+    </g>
+    <g>
+      <rect x="215" y="60" width="130" height="66" rx="8" fill="#1C1917" stroke="#FACC15" stroke-width="2"/>
+      <text x="280" y="98">PYTORCH</text>
+      <animateTransform attributeName="transform" type="translate" values="0 0;0 -4;0 0" dur="3s" begin=".4s" repeatCount="indefinite"/>
+    </g>
+    <g>
+      <rect x="370" y="60" width="150" height="66" rx="8" fill="#1C1917" stroke="#FACC15" stroke-width="2"/>
+      <text x="445" y="98">TRANSFORMERS</text>
+      <animateTransform attributeName="transform" type="translate" values="0 0;0 -4;0 0" dur="3s" begin=".8s" repeatCount="indefinite"/>
+    </g>
+    <g>
+      <rect x="545" y="60" width="110" height="66" rx="8" fill="#0B0B0F" stroke="#FDE68A" stroke-width="3"/>
+      <path transform="translate(600 92) scale(.85)" fill="#FACC15" d="M0,-8 L-6,-15 L-8,-6 C-20,-8 -34,-4 -50,6 C-40,6 -34,10 -32,18 C-26,12 -18,12 -14,18 C-10,10 -4,10 0,17 C4,10 10,10 14,18 C18,12 26,12 32,18 C34,10 40,6 50,6 C34,-4 20,-8 8,-6 L6,-15 Z">
+        <animate attributeName="opacity" values="1;.55;1" dur="2s" repeatCount="indefinite"/>
+      </path>
+    </g>
+    <g>
+      <rect x="680" y="60" width="130" height="66" rx="8" fill="#1C1917" stroke="#FACC15" stroke-width="2"/>
+      <text x="745" y="98">FLASK</text>
+      <animateTransform attributeName="transform" type="translate" values="0 0;0 -4;0 0" dur="3s" begin="1.2s" repeatCount="indefinite"/>
+    </g>
+    <g>
+      <rect x="835" y="60" width="130" height="66" rx="8" fill="#1C1917" stroke="#FACC15" stroke-width="2"/>
+      <text x="900" y="98">STREAMLIT</text>
+      <animateTransform attributeName="transform" type="translate" values="0 0;0 -4;0 0" dur="3s" begin="1.6s" repeatCount="indefinite"/>
+    </g>
+    <g>
+      <rect x="990" y="60" width="150" height="66" rx="8" fill="#1C1917" stroke="#FACC15" stroke-width="2"/>
+      <text x="1065" y="98">C · JS · HTML</text>
+      <animateTransform attributeName="transform" type="translate" values="0 0;0 -4;0 0" dur="3s" begin="2s" repeatCount="indefinite"/>
+    </g>
+  </g>
+  <text x="1164" y="156" text-anchor="end" fill="#71717A" font-family="monospace" font-size="11" letter-spacing="2">EVERY GADGET EARNED THROUGH A PROJECT</text>
+</svg>
