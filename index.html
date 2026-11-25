@@ -42,10 +42,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:
 .ring .card .t{position:absolute;inset:auto 10px 8px;font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:#fff;text-shadow:0 1px 6px #000}
 .card.code{display:flex;align-items:center;justify-content:center;font-family:Anton,sans-serif;font-size:30px;letter-spacing:.02em;color:var(--red-2);background:radial-gradient(circle at 50% 30%,#3a0a10,#0b0507)}
 @keyframes spin{to{transform:rotateY(-360deg)}}
-.portrait{position:relative;z-index:3;width:min(430px,78vw);aspect-ratio:3/4;margin-bottom:0;
+.portrait{position:relative;z-index:3;width:min(430px,78vw);aspect-ratio:3/4;border-radius:999px 999px 0 0;
+  background:url(img/code-red.jpg) 50% 30%/auto 118% no-repeat;box-shadow:0 0 120px #c1121f33;
   -webkit-mask-image:linear-gradient(#000 70%,transparent 100%);mask-image:linear-gradient(#000 70%,transparent 100%)}
-.portrait img{width:100%;height:100%;object-fit:cover;border-radius:999px 999px 0 0;filter:grayscale(.15) contrast(1.05)}
-.portrait::after{content:"";position:absolute;inset:0;border-radius:999px 999px 0 0;background:linear-gradient(180deg,transparent 40%,#06060899 85%),radial-gradient(circle at 50% 0,#c1121f22,transparent 60%)}
+.portrait::after{content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(180deg,transparent 45%,#060608aa 90%)}
 .hero-side{position:absolute;z-index:4;bottom:12vh;max-width:250px}
 .hero-side.l{left:32px}.hero-side.r{right:32px;text-align:right}
 .hero-side h1{font-family:var(--serif);font-weight:400;font-size:clamp(34px,4vw,54px);line-height:1;margin:12px 0}
@@ -63,7 +63,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:
 .why .bigword{position:absolute;top:40px;left:50%;transform:translateX(-50%);font-family:var(--serif);font-size:clamp(140px,24vw,340px);line-height:1;color:transparent;-webkit-text-stroke:1px #22222a;user-select:none}
 .arch-grid{position:relative;display:grid;grid-template-columns:1fr 360px 1fr;align-items:center;gap:0;min-height:560px}
 .arch{position:relative;z-index:2;height:540px;border-radius:999px 999px 0 0;overflow:hidden;padding:110px 34px 40px;display:flex;flex-direction:column;justify-content:flex-start;
-  background:linear-gradient(180deg,#0b050722 0%,#0b050799 35%,#2a070dcc 65%,#5c0d16ee 100%),url(img/code-red.jpg) 52% 20%/auto 115%}
+  background:radial-gradient(circle at 50% 18%,#ff3b4733,transparent 45%),linear-gradient(180deg,#1a0508 0%,#3a0a10 55%,#6b0f19 100%)}
+.arch .emblem{position:absolute;top:34px;left:50%;width:120px;transform:translateX(-50%);fill:#ff3b47;opacity:.35}
 .arch .mono{color:#ffb3b8;font-size:11px}
 .arch h2{font-family:var(--serif);font-weight:400;font-size:42px;line-height:1.02;margin:12px 0 22px}
 .arch p{font-size:14px;line-height:1.6;color:#f1d9db}
@@ -85,7 +86,16 @@ nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:
 .cases{padding:60px 0 120px}
 .case{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center;padding:56px 0;border-bottom:1px solid var(--line)}
 .case:nth-child(even) .shot{order:2}
-.shot{position:relative;aspect-ratio:16/10;border-radius:6px;overflow:hidden;background:#120709 center/cover;border:1px solid #ffffff12;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.shot{position:relative;aspect-ratio:16/10;border-radius:6px;overflow:hidden;border:1px solid #ffffff12;transition:transform .6s cubic-bezier(.2,.7,.2,1);
+  background:linear-gradient(#ffffff06 1px,transparent 1px) 0 0/100% 28px,linear-gradient(90deg,#ffffff06 1px,transparent 1px) 0 0/28px 100%,radial-gradient(ellipse at 50% 45%,#3a0a10 0%,#12060a 55%,#08080a 100%)}
+.shot::after{content:"";position:absolute;left:0;right:0;height:30%;top:-30%;background:linear-gradient(transparent,#ff3b4714,transparent);animation:scan 5s linear infinite}
+@keyframes scan{to{top:100%}}
+.shot .hud{position:absolute;inset:14px;pointer-events:none;
+  background:linear-gradient(#ff3b47,#ff3b47) 0 0/16px 1px,linear-gradient(#ff3b47,#ff3b47) 0 0/1px 16px,
+  linear-gradient(#ff3b47,#ff3b47) 100% 0/16px 1px,linear-gradient(#ff3b47,#ff3b47) 100% 0/1px 16px,
+  linear-gradient(#ff3b47,#ff3b47) 0 100%/16px 1px,linear-gradient(#ff3b47,#ff3b47) 0 100%/1px 16px,
+  linear-gradient(#ff3b47,#ff3b47) 100% 100%/16px 1px,linear-gradient(#ff3b47,#ff3b47) 100% 100%/1px 16px;background-repeat:no-repeat;opacity:.7}
+.shot .bar{z-index:1}
 .shot:hover{transform:scale(1.015)}
 .shot .word{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:Anton,sans-serif;font-size:clamp(46px,7vw,96px);letter-spacing:.01em;color:transparent;
   background:repeating-linear-gradient(0deg,#ff3b47 0 2px,#8f0d18 2px 4px);-webkit-background-clip:text;background-clip:text;opacity:.92}
@@ -100,6 +110,27 @@ nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:
 .tags span{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--line);padding:6px 10px;border-radius:99px;color:var(--dim)}
 .go{display:inline-flex;gap:10px;align-items:center;margin-top:26px;font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;border-bottom:1px solid var(--red-2);padding-bottom:4px}
 .go:hover{color:var(--red-2)}
+
+/* certificates */
+.trophies{padding:40px 32px 120px}
+.sec-title{font-family:var(--serif);font-weight:400;font-size:clamp(40px,5vw,68px);line-height:1;margin:36px 0 48px}
+.sec-title em{color:var(--red-2)}
+.cert-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.cert{margin:0}
+.cert-img{position:relative;display:block;width:100%;padding:14px;border:1px solid var(--line);border-radius:8px;cursor:zoom-in;
+  background:linear-gradient(145deg,#141418,#0a0a0d);transition:border-color .3s,transform .5s cubic-bezier(.2,.7,.2,1)}
+.cert-img:hover{border-color:#ff3b4788;transform:translateY(-6px)}
+.cert-img img{width:100%;border-radius:3px;filter:grayscale(.25)}
+.cert-img:hover img{filter:none}
+.badge{position:absolute;top:24px;right:24px;background:var(--red);color:#fff;padding:7px 12px;border-radius:99px;font-size:10px;box-shadow:0 6px 20px #0008}
+.cert figcaption{margin-top:22px}
+.cert figcaption .mono{color:var(--red-2);font-size:11px}
+.cert h3{font-family:var(--serif);font-weight:400;font-size:30px;margin:10px 0}
+.cert p{color:#cfc9be;line-height:1.7;font-size:15px}
+.lightbox{position:fixed;inset:0;z-index:200;background:#000e;display:grid;place-items:center;padding:24px}
+.lightbox[hidden]{display:none}
+.lightbox img{max-width:min(1200px,100%);max-height:88vh;border-radius:4px}
+.lightbox button{position:absolute;top:18px;right:22px;background:none;border:0;color:#fff;font-size:28px;cursor:pointer}
 
 /* belt marquee */
 .belt{border-block:1px solid var(--line);overflow:hidden;padding:26px 0;background:var(--ink-2)}
@@ -148,6 +179,7 @@ footer{display:flex;justify-content:space-between;padding:28px 32px;color:var(--
   .case,.about{grid-template-columns:1fr;gap:28px}
   .case:nth-child(even) .shot{order:0}
   .creed{grid-template-columns:1fr}
+  .cert-grid{grid-template-columns:1fr}.trophies{padding:30px 16px 90px}
   .belt .track{font-size:30px}
   footer{flex-direction:column;gap:8px;padding:24px 16px}
 }
@@ -167,6 +199,7 @@ footer{display:flex;justify-content:space-between;padding:28px 32px;color:var(--
   <a class="logo" href="#top">Maheswar<span>.</span></a>
   <div class="navlinks">
     <a href="#work">Works</a>
+    <a href="#certificates">Awards</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
   </div>
@@ -178,7 +211,7 @@ footer{display:flex;justify-content:space-between;padding:28px 32px;color:var(--
   <div class="hero-word" id="heroWord">Maheswar</div>
   <div class="ring" id="ring"></div>
 
-  <div class="portrait"><img src="img/me.jpg" alt="Bavisetti Maheswar smiling, sitting on a bench"></div>
+  <div class="portrait" role="img" aria-label="Caped vigilante standing in a red tunnel of code"></div>
 
   <div class="hero-side l">
     <div class="mono" style="color:var(--red-2)">● Available for projects</div>
@@ -212,6 +245,7 @@ footer{display:flex;justify-content:space-between;padding:28px 32px;color:var(--
       </div>
 
       <div class="arch">
+        <svg class="emblem" viewBox="-52 -18 104 38" aria-hidden="true"><use href="#batp"/></svg>
         <div class="mono">• Why me</div>
         <h2>Built in the dark, shipped in the light.</h2>
         <p>Every project starts with a real problem — screening resumes, identifying faces, catching crop disease — and ends with a working app people can actually use.</p>
@@ -225,8 +259,8 @@ footer{display:flex;justify-content:space-between;padding:28px 32px;color:var(--
           <svg viewBox="0 0 150 60"><path d="M0 20 H70 L140 50"/><circle cx="140" cy="50" r="3.5"/></svg>
         </div>
         <div class="stat">
-          <b><span data-count="10">0</span><em>+</em></b>
-          <span class="mono">Tools in the<br>utility belt</span>
+          <b><span data-count="1">0</span><em>st</em></b>
+          <span class="mono">Buildathon win —<br>24-hour, team MIB</span>
           <svg viewBox="0 0 150 60"><path d="M0 40 H70 L140 10"/><circle cx="140" cy="10" r="3.5"/></svg>
         </div>
       </div>
@@ -242,7 +276,7 @@ footer{display:flex;justify-content:space-between;padding:28px 32px;color:var(--
   <div class="kicker mono">Case files</div>
 
   <article class="case rv">
-    <div class="shot" style="background-image:linear-gradient(#1a0508cc,#0a0204ee),url(img/code-red.jpg)">
+    <div class="shot"><i class="hud"></i>
       <div class="bar"><span>B·M</span><span>☰</span></div>
       <div class="word">SCREENING</div>
       <div class="meta"><strong>AI Resume Screening</strong>Cross-encoder transformers rank every resume against the job, then an AI advisor explains the shortlist.</div>
@@ -258,9 +292,10 @@ footer{display:flex;justify-content:space-between;padding:28px 32px;color:var(--
   </article>
 
   <article class="case rv">
-    <div class="shot" style="background-image:linear-gradient(#ffffff00,#00000088),url(img/bats-white.jpg)">
-      <div class="bar" style="color:#111"><span>B·M</span><span>☰</span></div>
-      <div class="meta" style="color:#eee"><strong>324 players</strong>Upload a photo — get the player, profile and career stats.</div>
+    <div class="shot"><i class="hud"></i>
+      <div class="bar"><span>B·M</span><span>☰</span></div>
+      <div class="word">IDENTIFY</div>
+      <div class="meta"><strong>324 players</strong>Upload a photo — get the player, profile and career stats.</div>
       <div class="pill">VIEW CASE</div>
     </div>
     <div>
@@ -273,9 +308,9 @@ footer{display:flex;justify-content:space-between;padding:28px 32px;color:var(--
   </article>
 
   <article class="case rv">
-    <div class="shot" style="background-image:linear-gradient(#0a0a0c33,#0a0a0caa),url(img/ink-bats.jpg)">
-      <div class="bar" style="color:#111"><span>B·M</span><span>☰</span></div>
-      <div class="word" style="background:repeating-linear-gradient(0deg,#ff3b47 0 2px,#5c0710 2px 4px);-webkit-background-clip:text;background-clip:text">DETECT</div>
+    <div class="shot"><i class="hud"></i>
+      <div class="bar"><span>B·M</span><span>☰</span></div>
+      <div class="word">DETECT</div>
       <div class="meta"><strong>Crop disease</strong>Leaf photo in — diagnosis and action plan out.</div>
       <div class="pill">VIEW CASE</div>
     </div>
@@ -289,7 +324,7 @@ footer{display:flex;justify-content:space-between;padding:28px 32px;color:var(--
   </article>
 
   <article class="case rv">
-    <div class="shot" style="background:radial-gradient(circle at 70% 20%,#3a0a10,#08080a 70%)">
+    <div class="shot"><i class="hud"></i>
       <div class="bar"><span>B·M</span><span>☰</span></div>
       <div class="word">ASK&nbsp;ME</div>
       <div class="meta"><strong>Personal chatbot</strong>Inverted index + TF-IDF vectors for fast, precise answers.</div>
@@ -305,7 +340,7 @@ footer{display:flex;justify-content:space-between;padding:28px 32px;color:var(--
   </article>
 
   <article class="case rv">
-    <div class="shot" style="background:#0b0b0e">
+    <div class="shot"><i class="hud"></i>
       <div class="bar"><span>B·M</span><span>☰</span></div>
       <div class="word" style="font-size:clamp(34px,5vw,70px)">STRUCT&nbsp;NODE*</div>
       <div class="meta"><strong>Foundations</strong>Stacks, queues, lists and trees — written in plain C.</div>
@@ -320,6 +355,38 @@ footer{display:flex;justify-content:space-between;padding:28px 32px;color:var(--
     </div>
   </article>
 </section>
+
+<!-- CERTIFICATES -->
+<section class="wrap trophies" id="certificates">
+  <div class="kicker mono">Trophy room</div>
+  <h2 class="sec-title rv">Proof from <em>the field.</em></h2>
+  <div class="cert-grid">
+    <figure class="cert rv">
+      <button class="cert-img" data-full="img/cert-buildathon.jpg" aria-label="Enlarge MST Blockchain Buildathon 2026 winner certificate">
+        <img src="img/cert-buildathon.jpg" alt="Winners certificate, MST Blockchain Buildathon 2026, presented to Bavisetti Maheswar, team MIB" loading="lazy">
+        <span class="badge mono">🏆 Winner</span>
+      </button>
+      <figcaption>
+        <div class="mono">2026 · 24-hour buildathon</div>
+        <h3>MST Blockchain Buildathon — Winners</h3>
+        <p>Won with team <b>MIB</b> at the 24-hour MST Blockchain Buildathon held at B.M.S. College of Engineering, Bengaluru, building solutions with blockchain, AI and emerging tech.</p>
+      </figcaption>
+    </figure>
+    <figure class="cert rv">
+      <button class="cert-img" data-full="img/cert-codeforge.jpg" aria-label="Enlarge CodeForge AI Hackathon certificate">
+        <img src="img/cert-codeforge.jpg" alt="Certificate of participation, CodeForge AI Hackathon, April 3 2025" loading="lazy">
+        <span class="badge mono">Participant</span>
+      </button>
+      <figcaption>
+        <div class="mono">Apr 3, 2025 · AI hackathon</div>
+        <h3>CodeForge AI Hackathon</h3>
+        <p>Took part in the CodeForge AI Hackathon during VarAInce Week, organised by the VarAInce Club, Department of AI &amp; Data Science, BMSCE.</p>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox" hidden><button aria-label="Close">✕</button><img alt=""></div>
 
 <!-- ABOUT -->
 <section class="wrap" id="about">
@@ -356,9 +423,8 @@ footer{display:flex;justify-content:space-between;padding:28px 32px;color:var(--
 <script>
 // 3D ring of floating cards behind the portrait
 const cards=[
-  {bg:"img/code-red.jpg",t:"Resume AI"},{code:"324"},{bg:"img/bats-white.jpg",t:"Face ID"},
-  {code:"TF·IDF"},{bg:"img/ink-bats.jpg",t:"Crop scan"},{code:"&lt;/&gt;"},
-  {bg:"img/code-red.jpg",t:"Chatbot"},{code:"C · DSA"}
+  {code:"PyTorch"},{code:"324"},{code:"FaceNet"},{code:"TF·IDF"},
+  {code:"WINNER"},{code:"&lt;/&gt;"},{code:"NLP"},{code:"C · DSA"}
 ];
 const ring=document.getElementById('ring');
 const R=window.innerWidth<900?240:520;
@@ -387,6 +453,13 @@ for(let i=0;i<5;i++){
     {duration:9000+Math.random()*9000,delay:i*1800,iterations:Infinity});
   hero.appendChild(s);
 }
+
+// certificate lightbox
+const lb=document.getElementById('lightbox'),lbImg=lb.querySelector('img');
+document.querySelectorAll('.cert-img').forEach(b=>b.addEventListener('click',()=>{
+  lbImg.src=b.dataset.full;lbImg.alt=b.querySelector('img').alt;lb.hidden=false;}));
+lb.addEventListener('click',()=>lb.hidden=true);
+addEventListener('keydown',e=>{if(e.key==='Escape')lb.hidden=true});
 
 // parallax hero word
 const hw=document.getElementById('heroWord');
